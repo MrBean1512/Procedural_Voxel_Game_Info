@@ -59,6 +59,19 @@ This list is designed to explain key words that may not be apparent to beginners
 
 ---
 ## Noise, Topography, and World Generation
+
+### What is Noise?
+Noise has a few similar terms such as procedural texture or [gradient noise](https://en.wikipedia.org/wiki/Gradient_noise). In the case of terrain, it is a pseudo-random way to generate the shape of terrain in a way that looks natural but that is also consistent throughout the world. Pseudo-random in this case means that it looks random but it's not actually random at all. The most famous type of noise is perlin noise and it is commonly referenced in procedural terrain tutorials but there are others such as the following:
+-Simplex Noise (like perlin noise but a bit newer and faster)
+-Fractal Noise
+-Celular/Voronoi Noise
+
+### Why Use Noise?
+Landscapes and terrain need a way to look organic and natural. Unfortunately this means there needs to be an element of randomness and predicatbility mixed together. Things as large as biomes and hills are sort of just blobs of space. If you generate your entire world all at once, you *could* just peak at neighboring voxels to decide how to place the next voxel, but that brute force method is ineffecient and breaks down in chunk-based worlds. Imagine aproaching a single chunk from two different sides, you'll end up with weird transitions and unpredictable terrain. If that didn't make sense, worry not, it doesn't have to, what you need to know is that noise let's you decide how to generate a voxel (or pixel) without having to understand anything about its neighbors. If you want a massive-chunk based world, this is 
+
+###
+
+---
 ## Mesh Generation
 
 
