@@ -19,34 +19,25 @@ Because this is an evolving project, I’m not sharing full repositories until I
 - [Mesh Stitching With LOD](#mesh-stitching-with-lod)
 
 ---
-## Intro for Beginners
+## Common and Conflated Terms
+This list is designed to explain key words that may not be apparent to beginners. When I started this, I had no idea what to even look up, I just searched "procedural terrain tutorial" and "sandbox game in ue5 tutorial" which were generally fine for getting started but it was never adequate for full-scale projects. Those terms were great for getting started but the more I learned, the more I realized that the resources needed for full scale-projects were sparce.
 
-This list is designed to explain key words that may not be apparent to beginners. When I started this, I had no idea what to even look up, I just searched "procedural terrain tutorial" and "sandbox game in ue5 tutorial" which were generally fine for getting started but it was never adequate for full-scale projects.
+### Voxel
+A voxel is simply a sample of a volume in 3D space. The word "voxel" is a combination of the words "volume" and "pixel", in other words, it is a 3D-pixel. Normally, 3D models are just meshes with textures and colliders wrapped over that mesh, they are just the surface of an object but nothing within. Voxels provide a data-friendly way to represent a full 3D volume within and without.
+
+Common terms used with voxels are as follows:
+- **Volumetric** - "Volumetric" refers to anything that represents or simulates a continuous three dimensional space, like a density field, fog, or an SDF. A voxel is one discrete sample inside that space, a single data point in a regular three dimensional grid. In other words, a volume represents 3D space in its enirety while voxels represent a finite number of samples of that space.
+- **Block** (or cube) - The most famous voxel game, by far, is **Minecraft**. Each block in Minecraft represents a single voxel so picturing how the space is broken up and what each voxel represents is super easy, but voxels are just a point, not a cube. Nonetheless, it can be a handy way to understand voxels because it breaks things up nicely and it's easy to visualize.
+- **Tile** (or square) - One thing that can get confusing is the distinction between a generic tile-based game and a 2D voxel game. "Tiles" are visual cells in a 2D grid, each one directly representing a sprite or gameplay element. 2D voxels are samples of a data field arranged in a grid, usually storing values like density or material rather than artwork. The word "voxel" technically refers to a 3D volume element, so calling a 2D sample a voxel is not technically correct. Even so, many developers use the term informally because it captures the idea of a grid of data driven cells rather than a tilemap of sprites. **Terraria** is a great example of this as well as **Valheim**. Although valheim is confusing because it is a 3D game represented by 2D data.
+
+
+## General Steps To Learning
+
+
+
 I highly recommend this tutorial if you are new to everything: [Sebastian Lague - Procedural Terrain Generation](https://youtube.com/playlist?list=PLFt_AvWsXl0eBW2EiBtl_sxmDtSgZBxB3&si=P05Zr0TiyyIYseGp)
 
 
-
-Common meanings
-Scaling values into a standard range  
-Example: turning any number into something between 0 and 1.
-
-Making data comparable  
-Example: adjusting measurements so they’re on the same scale.
-
-Removing arbitrary differences  
-Example: normalizing audio so volume levels match.
-
-Standardizing structure or format  
-Example: normalizing text (lowercasing, removing accents).
-
-Ensuring consistent proportions  
-Example: normalizing a vector so its length becomes 1.
-
-Math / vectors
-If you have a vector like (3, 4), normalizing it means scaling it so its length becomes 1.
-You keep the direction, but remove the magnitude.
-
-In our case, noise is highly layered so normalization is a good way to keep things clean.
 
 ---
 ## Noise, Topography, and World Data Generation
