@@ -1,4 +1,6 @@
 # Procedural Smooth Voxel Generation in Arbitrary Sized Worlds - Notes, Experiments, and Current Approach
+This is incomplete atm
+
 
 ## Introduction
 
